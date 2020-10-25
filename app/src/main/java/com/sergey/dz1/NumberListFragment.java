@@ -19,21 +19,21 @@ import java.util.ArrayList;
 
 public class NumberListFragment extends Fragment {
     private ArrayList<Integer> ArrayNumberList;
-    private ReportClickListener report;
     private int spanCount;
+    private ReportClickListener report;
     RecyclerView NumberList;
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            spanCount=3;
+            spanCount=getResources().getInteger(R.integer.column_count_portrait);
         }
         else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            spanCount=4;
+            spanCount=getResources().getInteger(R.integer.column_count_landscape);
         }
         if(savedInstanceState==null){
             ArrayNumberList = new ArrayList<Integer>();
-            for(int i=0;i<6;i++){
+            for(int i=0;i<100;i++){
                 ArrayNumberList.add(i+1);
             }
         }
