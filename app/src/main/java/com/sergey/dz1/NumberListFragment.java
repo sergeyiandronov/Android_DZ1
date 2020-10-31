@@ -25,12 +25,7 @@ public class NumberListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            spanCount=getResources().getInteger(R.integer.column_count_portrait);
-        }
-        else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            spanCount=getResources().getInteger(R.integer.column_count_landscape);
-        }
+        spanCount=getResources().getInteger(R.integer.column_count);
         if(savedInstanceState==null){
             ArrayNumberList = new ArrayList<Integer>();
             for(int i=0;i<100;i++){
